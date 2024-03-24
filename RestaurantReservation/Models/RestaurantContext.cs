@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantReservation.Models
 {
-    public class RestauratntContext:DbContext
+    public class RestaurantContext:DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

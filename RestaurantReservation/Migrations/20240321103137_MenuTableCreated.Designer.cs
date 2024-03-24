@@ -11,7 +11,7 @@ using RestaurantReservation.Models;
 
 namespace RestaurantReservation.Migrations
 {
-    [DbContext(typeof(RestauratntContext))]
+    [DbContext(typeof(RestaurantContext))]
     [Migration("20240321103137_Menu")]
     partial class Menu
     {

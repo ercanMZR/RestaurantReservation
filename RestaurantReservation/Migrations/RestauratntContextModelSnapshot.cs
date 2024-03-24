@@ -10,7 +10,7 @@ using RestaurantReservation.Models;
 
 namespace RestaurantReservation.Migrations
 {
-    [DbContext(typeof(RestauratntContext))]
+    [DbContext(typeof(RestaurantContext))]
     partial class RestauratntContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

@@ -10,7 +10,7 @@ using RestaurantReservation.Models;
 
 namespace RestaurantReservation.Migrations
 {
-    [DbContext(typeof(RestauratntContext))]
+    [DbContext(typeof(RestaurantContext))]
     [Migration("20240321102008_BaseClassCreated")]
     partial class BaseClassCreated
     {
