@@ -41,10 +41,7 @@ namespace RestaurantReservation.Services
             customer.Email = email;
             customer.Address = address;
 
-            ctx.Add(customer);
-            ctx.SaveChanges();
             return customer;
-
         }
         public void Update(Customer value)
         {

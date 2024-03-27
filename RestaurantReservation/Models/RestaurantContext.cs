@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantReservation.Models
 {
-    public class RestaurantContext:DbContext
+    public class RestaurantContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -15,13 +15,13 @@ namespace RestaurantReservation.Models
 
 
         }
-        DbSet<Customer> Customers {  get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
-        DbSet<Menu> Menu { get; set; }
+        public DbSet<Menu> Menu { get; set; }
 
-        DbSet<Reservation> Reservations { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
 
-        DbSet<Order> Orders { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
 
 
