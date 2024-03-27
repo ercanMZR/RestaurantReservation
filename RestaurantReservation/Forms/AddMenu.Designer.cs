@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dgvCustomers = new DataGridView();
+            dgvMenus = new DataGridView();
             btnAdd = new Button();
             btnUpdate = new Button();
             btnDelete = new Button();
             txtTitle = new TextBox();
             label5 = new Label();
-            txtdescription = new TextBox();
+            txtDescription = new TextBox();
             label3 = new Label();
             txtPrice = new TextBox();
             label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dgvCustomers).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMenus).BeginInit();
             SuspendLayout();
             // 
-            // dgvCustomers
+            // dgvMenus
             // 
-            dgvCustomers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCustomers.Location = new Point(12, 351);
-            dgvCustomers.Name = "dgvCustomers";
-            dgvCustomers.RowHeadersWidth = 51;
-            dgvCustomers.Size = new Size(648, 188);
-            dgvCustomers.TabIndex = 21;
+            dgvMenus.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMenus.Location = new Point(12, 351);
+            dgvMenus.Name = "dgvMenus";
+            dgvMenus.RowHeadersWidth = 51;
+            dgvMenus.Size = new Size(648, 188);
+            dgvMenus.TabIndex = 21;
             // 
             // btnAdd
             // 
@@ -59,6 +59,7 @@
             btnAdd.TabIndex = 18;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnUpdate
             // 
@@ -69,6 +70,7 @@
             btnUpdate.TabIndex = 19;
             btnUpdate.Text = "Update";
             btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnDelete
             // 
@@ -79,6 +81,7 @@
             btnDelete.TabIndex = 20;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // txtTitle
             // 
@@ -96,12 +99,12 @@
             label5.TabIndex = 12;
             label5.Text = "Title:";
             // 
-            // txtdescription
+            // txtDescription
             // 
-            txtdescription.Location = new Point(371, 132);
-            txtdescription.Name = "txtdescription";
-            txtdescription.Size = new Size(145, 27);
-            txtdescription.TabIndex = 16;
+            txtDescription.Location = new Point(371, 132);
+            txtDescription.Name = "txtDescription";
+            txtDescription.Size = new Size(145, 27);
+            txtDescription.TabIndex = 16;
             // 
             // label3
             // 
@@ -133,32 +136,33 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(673, 551);
-            Controls.Add(dgvCustomers);
+            Controls.Add(dgvMenus);
             Controls.Add(btnAdd);
             Controls.Add(btnUpdate);
             Controls.Add(btnDelete);
             Controls.Add(txtTitle);
             Controls.Add(label5);
-            Controls.Add(txtdescription);
+            Controls.Add(txtDescription);
             Controls.Add(label3);
             Controls.Add(txtPrice);
             Controls.Add(label1);
             Name = "AddMenu";
             Text = "AddMenu";
-            ((System.ComponentModel.ISupportInitialize)dgvCustomers).EndInit();
+            Load += AddMenu_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvMenus).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dgvCustomers;
+        private DataGridView dgvMenus;
         private Button btnAdd;
         private Button btnUpdate;
         private Button btnDelete;
         private TextBox txtTitle;
         private Label label5;
-        private TextBox txtdescription;
+        private TextBox txtDescription;
         private Label label3;
         private TextBox txtPrice;
         private Label label1;

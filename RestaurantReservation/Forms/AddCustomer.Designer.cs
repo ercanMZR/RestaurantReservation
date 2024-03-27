@@ -1,4 +1,5 @@
-﻿namespace RestaurantReservation.Forms
+﻿
+namespace RestaurantReservation.Forms
 {
     partial class AddCustomer
     {
@@ -31,11 +32,11 @@
             btnDelete = new Button();
             btnUpdate = new Button();
             btnAdd = new Button();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            txtAdress = new TextBox();
+            txtPhone = new TextBox();
+            txtEmail = new TextBox();
+            txtSurname = new TextBox();
+            txtName = new TextBox();
             dataGridView1 = new DataGridView();
             lblAddress = new Label();
             lblPhone = new Label();
@@ -54,6 +55,7 @@
             btnDelete.TabIndex = 16;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnUpdate
             // 
@@ -64,6 +66,7 @@
             btnUpdate.TabIndex = 17;
             btnUpdate.Text = "Update";
             btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnAdd
             // 
@@ -74,41 +77,42 @@
             btnAdd.TabIndex = 18;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
-            // textBox5
+            // txtAdress
             // 
-            textBox5.Location = new Point(438, 227);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(269, 27);
-            textBox5.TabIndex = 11;
+            txtAdress.Location = new Point(438, 227);
+            txtAdress.Name = "txtAdress";
+            txtAdress.Size = new Size(269, 27);
+            txtAdress.TabIndex = 11;
             // 
-            // textBox4
+            // txtPhone
             // 
-            textBox4.Location = new Point(438, 182);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(269, 27);
-            textBox4.TabIndex = 12;
+            txtPhone.Location = new Point(438, 182);
+            txtPhone.Name = "txtPhone";
+            txtPhone.Size = new Size(269, 27);
+            txtPhone.TabIndex = 12;
             // 
-            // textBox3
+            // txtEmail
             // 
-            textBox3.Location = new Point(438, 135);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(269, 27);
-            textBox3.TabIndex = 13;
+            txtEmail.Location = new Point(438, 135);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(269, 27);
+            txtEmail.TabIndex = 13;
             // 
-            // textBox2
+            // txtSurname
             // 
-            textBox2.Location = new Point(438, 81);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(269, 27);
-            textBox2.TabIndex = 14;
+            txtSurname.Location = new Point(438, 81);
+            txtSurname.Name = "txtSurname";
+            txtSurname.Size = new Size(269, 27);
+            txtSurname.TabIndex = 14;
             // 
-            // textBox1
+            // txtName
             // 
-            textBox1.Location = new Point(438, 27);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(269, 27);
-            textBox1.TabIndex = 15;
+            txtName.Location = new Point(438, 27);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(269, 27);
+            txtName.TabIndex = 15;
             // 
             // dataGridView1
             // 
@@ -118,6 +122,8 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(997, 260);
             dataGridView1.TabIndex = 10;
+            dataGridView1.CellClick += dataGridView1_CellClick;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // lblAddress
             // 
@@ -172,11 +178,11 @@
             Controls.Add(btnDelete);
             Controls.Add(btnUpdate);
             Controls.Add(btnAdd);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtAdress);
+            Controls.Add(txtPhone);
+            Controls.Add(txtEmail);
+            Controls.Add(txtSurname);
+            Controls.Add(txtName);
             Controls.Add(dataGridView1);
             Controls.Add(lblAddress);
             Controls.Add(lblPhone);
@@ -185,9 +191,15 @@
             Controls.Add(lblName);
             Name = "AddCustomer";
             Text = "AddCustomer";
+            Load += AddCustomer_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
@@ -195,11 +207,11 @@
         private Button btnDelete;
         private Button btnUpdate;
         private Button btnAdd;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox txtAdress;
+        private TextBox txtPhone;
+        private TextBox txtEmail;
+        private TextBox txtSurname;
+        private TextBox txtName;
         private DataGridView dataGridView1;
         private Label lblAddress;
         private Label lblPhone;

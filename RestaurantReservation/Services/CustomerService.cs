@@ -14,32 +14,29 @@ namespace RestaurantReservation.Services
         public List<Customer> GetAll()
         {
             RestaurantContext context = new RestaurantContext();
-            List<Customer> customers = context.Customers.OrderBy(x => x.Id).ToList();
+            List<Customer> customers = context.Customers.Where(x=>x.IsDeleted==false).ToList();
             return customers;
             
 
         }
 
-        public void Delete(int id)
+        public void Delete(Customer value)
         {
             RestaurantContext ctx = new RestaurantContext();
-            Customer customer = ctx.Customers.FirstOrDefault(x => x.Id == id);
-            ctx.Customers.Remove(customer);
+            Customer customer = ctx.Customers.FirstOrDefault(x => x.Id == value.Id);
+
+            customer.IsDeleted=true;
             ctx.SaveChanges();
 
 
             
         }
 
-        public Customer Add(string name, string surname, string phone, string email, string address)
+        public Customer Add(Customer customer)
         {
-            RestaurantContext ctx = new RestaurantContext();
-            Customer customer = new Customer();
-            customer.Name = name;
-            customer.Surname = surname;
-            customer.Phone = phone;
-            customer.Email = email;
-            customer.Address = address;
+            RestaurantContext context = new RestaurantContext();
+            context.Customers.Add(customer);
+            context.SaveChanges();
 
             return customer;
         }

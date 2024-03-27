@@ -20,26 +20,32 @@ namespace RestaurantReservation.Services
 
         }
 
-        public void Delete(int id)
+        public void Delete(Menu value)
         {
-            Menu menu = context.Menu.Find(id);
+            Menu menu = context.Menu.FirstOrDefault(x=> x.Id == value.Id);
             menu.IsDeleted = true;
             context.SaveChanges();
+           
 
 
         }
 
         public List<Menu> GetAll()
         {
-            List<Menu> menu = context.Menu.Where(x => x.IsDeleted == false).ToList();
+            List<Menu> menu = context.Menu.Where(x=> x.IsDeleted==false).ToList();  
             return menu;
         }
 
-        public void Update(Menu menu)
+        public void Update(Menu value)
         {
-            Menu updatedMenu = context.Menu.Find(menu.Id)!;
-            updatedMenu.Price = menu.Price;
-            context.SaveChanges();
+            var menu = context.Menu.FirstOrDefault(m => m.Id == value.Id);
+
+            if (menu != null)
+            {
+                menu.Title = value.Title;
+                menu.Description = value.Description;
+                menu.Price = value.Price;
+            }
         }
 
     }

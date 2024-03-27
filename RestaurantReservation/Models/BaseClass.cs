@@ -13,5 +13,8 @@ namespace RestaurantReservation.Models
         public int Id { get; set; }
         public DateTime? AddDate { get; set; }
 
+        public bool IsDeleted { get; set; } = false;
     }
+
 }
+
