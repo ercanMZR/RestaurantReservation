@@ -29,13 +29,18 @@ namespace RestaurantReservation.Services
 
         public List<Reservation> GetAll()
         {
-            return context.Reservations.Where(x=>x.IsDeleted==false).ToList();
+          List<Reservation>reservations= context.Reservations.Where(x => x.IsDeleted == false).ToList();
+            return reservations;
         }
 
         public void Update(Reservation value)
         {
-            Reservation reservation=context.Reservations.Find(value.Id);
-            
-        }
+            Reservation reservation = context.Reservations.Find(value.Id);
 
+        }
     }
+}
+
+
+    
+

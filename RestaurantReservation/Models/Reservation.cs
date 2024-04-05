@@ -14,5 +14,7 @@ namespace RestaurantReservation.Models
         public Customer Customers { get; set; }
         public DateTime ReservationDate { get; set; }
 
+        public string Notes { get; set; }
+
     }
 }

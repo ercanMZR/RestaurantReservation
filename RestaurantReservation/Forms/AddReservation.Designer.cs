@@ -56,6 +56,7 @@
             cmbCustomers.Name = "cmbCustomers";
             cmbCustomers.Size = new Size(250, 28);
             cmbCustomers.TabIndex = 1;
+            cmbCustomers.SelectedIndexChanged += cmbCustomers_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -97,6 +98,7 @@
             btnAdd.TabIndex = 6;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnDelete
             // 
@@ -106,6 +108,7 @@
             btnDelete.TabIndex = 7;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // dataGridView1
             // 
@@ -115,6 +118,7 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(644, 232);
             dataGridView1.TabIndex = 8;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // AddReservation
             // 
@@ -132,6 +136,7 @@
             Controls.Add(label1);
             Name = "AddReservation";
             Text = "AddReservation";
+            Load += AddReservation_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
